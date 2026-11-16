@@ -1,0 +1,32 @@
+.form-control label,
+.form-control input {
+  display: block;
+}
+
+.form-control input,
+.form-control textarea {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px hsl(0, 0%, 0%);
+  padding: 0.2rem 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+button,
+.button {
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: rgb(144, 210, 31);
+  color: #000;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+a.button {
+  text-decoration: none;
+}
+
+form {
+  width: 20rem;
+}

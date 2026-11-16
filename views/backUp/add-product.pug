@@ -1,0 +1,10 @@
+extends ./layouts/main-layout.pug
+block otherHeader
+    link(rel="stylesheet", href="/css/product.css")
+block mainContent
+        main
+            form.product-form(action="/admin/product", method="post")
+                div.form-control
+                    label(for="pName") Enter Product Name
+                    input(type="text", name="productName", id="pName")
+                button(type="submit") Save
