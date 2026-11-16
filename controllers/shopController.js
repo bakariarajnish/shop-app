@@ -26,6 +26,16 @@ exports.getProducts = (req, res, next) => {
   });
 };
 
+//This controller is for handing product details page
+exports.getProduct = (req, res, next) => {
+  const productId = req.params.productId;
+  Product.getproductById(productId, (product) => {
+    console.log(product);
+  })
+  
+  res.redirect('/');
+}
+
 //Shopping Cart controller
 exports.cart = (req, res, next) => {
   res.render("shop/cart", {

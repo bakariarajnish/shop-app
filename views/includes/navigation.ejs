@@ -1,4 +1,6 @@
+<div class="backdrop"></div>
 <header class="main-header">
+  <button id="side-menu-toggle">Menu</button>
   <nav class="main-header__nav">
     <ul class="main-header__item-list">
       <li class="main-header__item">
@@ -38,3 +40,40 @@
     </ul>
   </nav>
 </header>
+
+<nav class="mobile-nav">
+  <ul class="mobile-nav__item-list">
+    <li class="mobile-nav__item">
+      <a href="/" class="<%= activeLink === '/home'? 'active': ''%>">Home</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/products" class="<%= activeLink === '/products'? 'active': ''%>"
+        >Products</a
+      >
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/cart" class="<%= activeLink === '/cart'? 'active': ''%>"
+        >Cart</a
+      >
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/orders" class="<%= activeLink === '/orders'? 'active': ''%>"
+        >Orders</a
+      >
+    </li>
+    <li class="mobile-nav__item">
+      <a
+        href="/admin/add-product"
+        class="<%= activeLink === '/add-product'? 'active': ''%>"
+        >Add Product</a
+      >
+    </li>
+    <li class="mobile-nav__item">
+      <a
+        href="/admin/product-list"
+        class="<%= activeLink === '/admin/product-list'? 'active': ''%>"
+        >Admin Products</a
+      >
+    </li>
+  </ul>
+</nav>
