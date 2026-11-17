@@ -1,4 +1,5 @@
 const Product = require("../models/product");
+const Cart = require("../models/cart");
 
 //This controller function is to get all products
 exports.getAllProducts = (req, res, next) => {
@@ -30,13 +31,17 @@ exports.getProducts = (req, res, next) => {
 exports.getProduct = (req, res, next) => {
   const productId = req.params.productId;
   Product.getproductById(productId, (product) => {
-    console.log(product);
+    res.render('shop/product-detail', {
+      product: product,
+      pageTitle: product.productName,
+      activeLink: "/products"
+    });
   })
   
-  res.redirect('/');
+  
 }
 
-//Shopping Cart controller
+//Shopping Cart controller - get cart data
 exports.cart = (req, res, next) => {
   res.render("shop/cart", {
     products: [],
@@ -44,6 +49,16 @@ exports.cart = (req, res, next) => {
     activeLink: "/cart",
   });
 };
+
+//shopping  Cart - post data to cart
+exports.postCart= (req, res, next) => {
+  const productId = req.body.productId;
+  Product.getproductById(productId, (product) => {
+    Cart.addProductToCart(productId, product.price);
+    res.redirect('/cart');
+  })
+  
+}
 
 //Shopping Orders controller
 exports.orders = (req, res, next) => {
