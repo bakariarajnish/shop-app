@@ -13,9 +13,14 @@
 }
 
 .product-form label {
-  width: 7rem;
+  width: 100%;
   display: inline-block;
   vertical-align: top;
+}
+
+.form-control input,
+.form-control textarea {
+  width: 100%;
 }
 
 .product-item {
